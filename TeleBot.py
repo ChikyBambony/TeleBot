@@ -42,7 +42,7 @@ def on_text(message):
 
     # Не админы: Excel/логи только если настроено
     excel_path = os.getenv("EXCEL_PATH", "").strip()
-    excel_sheet = os.getenv("EXCEL_SHEET", "2021").strip()
+    excel_sheet = os.getenv("EXCEL_SHEET", "").strip()
     log_actions = os.getenv("LOG_ACTIONS_PATH", "").strip()
     log_ids = os.getenv("LOG_IDS_PATH", "").strip()
 

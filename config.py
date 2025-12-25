@@ -4,10 +4,7 @@ from pathlib import Path
 
 
 def _load_dotenv(dotenv_path: str = ".env") -> None:
-    """
-    Мини-лоадер .env без внешних зависимостей.
-    Поддерживает строки вида KEY=VALUE и KEY="VALUE".
-    """
+
     p = Path(dotenv_path)
     if not p.exists():
         return
@@ -57,7 +54,7 @@ def get_settings() -> Settings:
 
     return Settings(
         telegram_bot_token=token,
-        bdpn_url=os.getenv("BDPN_URL", "https://prod.bdpn.ru/bdpn_wb").strip(),
+        bdpn_url=os.getenv("BDPN_URL", "").strip(),
         bdpn_login=os.getenv("BDPN_LOGIN", "").strip(),
         bdpn_password=os.getenv("BDPN_PASSWORD", "").strip(),
         timeout_sec=float(os.getenv("BDPN_TIMEOUT", "20")),
